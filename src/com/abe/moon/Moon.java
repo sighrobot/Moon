@@ -7,11 +7,7 @@ import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Paint.Style;
-import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -34,6 +30,21 @@ public class Moon extends View {
 	public Moon(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 	}
+	
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+	    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	    int size = 0;
+	    int width = getMeasuredWidth();
+	    int height = getMeasuredHeight();
+	 
+	    if (width > height) {
+	        size = height;
+	    } else {
+	        size = width;
+	    }
+	    setMeasuredDimension(size, size);
+	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
@@ -55,7 +66,7 @@ public class Moon extends View {
 	private void drawMoon() {
 		
 		int width = this.getWidth();
-		int height = this.getHeight() - 300;
+		int height = this.getHeight();
 		
 		mp = new MoonPhase(calendar);
 		double percentIlluminated = mp.getPhase() / 100;
@@ -64,7 +75,7 @@ public class Moon extends View {
 		Paint moonPaint = new Paint();
 		moonPaint.setColor(Color.WHITE);
 		moonPaint.setMaskFilter(new BlurMaskFilter(1, BlurMaskFilter.Blur.NORMAL));
-		double scalingFactor = 0.8;
+		double scalingFactor = 0.95;
 		float radius = (float) ( Math.min(width / 2, height / 2) * scalingFactor );
 		
 		if (percentIlluminated != 0.0) {

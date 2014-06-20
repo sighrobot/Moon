@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+        <!-- phase text -->
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:padding="4dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center_horizontal"
+            android:text="FIRST QUARTER"
+            android:textColor="#dddddd"
+            android:background="#00cccccc"
+            style="@android:style/TextAppearance.Large" />
+
+        <!-- moon graphics -->
+
+        <com.abe.moon.Moon
+            android:id="@+id/moon1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+   
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="96dp"
+        android:gravity="center"
+        android:background="#00000000"
+        android:layout_marginTop="32dp"
+         >
+
+        <!-- left arrow -->
+        <Button
+            android:id="@+id/button4"
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:background="#222222"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="@string/left_arrow"
+            android:textColor="#dddddd"
+            style="@android:style/TextAppearance.Large"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="32dp"
+            android:paddingLeft="32dp"
+             />
+
+        <!-- date text -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#222222"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="DATE"
+            android:textColor="#dddddd"
+            style="@android:style/TextAppearance.Large"
+            android:width="190dp" />
+
+        <!-- right arrow -->
+        <Button
+            android:id="@+id/button3"
+            android:layout_height="fill_parent"
+            android:layout_width="wrap_content"
+            android:background="#222222"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="@string/right_arrow"
+            android:textColor="#dddddd"
+            style="@android:style/TextAppearance.Large"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingRight="32dp"
+            android:paddingLeft="32dp"
+             />
+    </LinearLayout>
+
+  
+    
+    <!-- today button -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="96dp"
+        android:background="#222222"
+        android:fontFamily="sans-serif-thin"
+        android:padding="4dp"
+        android:layout_marginTop="8dp"
+        android:text="CURRENT MOON"
+        android:textColor="#dddddd"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center" />
+
+</LinearLayout>

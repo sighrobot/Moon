@@ -4,5 +4,7 @@
     <string name="app_name">Moon</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="left_arrow">&lt;</string>
+    <string name="right_arrow">&gt;</string>
 
 </resources>
